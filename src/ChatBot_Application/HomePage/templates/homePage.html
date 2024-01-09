@@ -10,10 +10,18 @@
         <div><h1>For our side bar</h1></div>
         <div>
             <h1>Main section</h1>
-            <form>
-                <textarea rows="4" cols="50"></textarea>
-                <button>Send</button>
-            </form>
+            <!-- chat_template.html -->
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Send</button>
+</form>
+
+<div>
+    {% for message in chat_messages %}
+        <p>{{ message.user }}: {{ message.content }}</p>
+    {% endfor %}
+</div>
         </div>
     </div>
 </body>

@@ -1,1 +1,1 @@
-python --version
+python --versionreq
